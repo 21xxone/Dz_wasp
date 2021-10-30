@@ -1,0 +1,149 @@
+using System;
+
+namespace ConsoleApp6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ConsoleKeyInfo Translate;
+            string[] sEng, SENG, sEnj, SENJ, sRus, SRUS, sRuj, SRUJ, lRus, LRUS, lEng, LENG;
+            sEng = new string[] { "a", "b", "v", "g", "d", "z", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "f", "c", "y", "e" };
+            SENG = new string[] { "A", "B", "V", "G", "D", "Z", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "C", "Y", "E" };
+            sEnj = new string[] { "je", "jo", "zh", "kh", "ch", "sh", "shch", "ju", "ja" };
+            SENJ = new string[] { "Je", "Jo", "Zh", "Kh", "Ch", "Sh", "Shch", "Ju", "Ja" };
+            sRus = new string[] { "а", "б", "в", "г", "д", "з", "и", "й", "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "ц", "ы", "э" };
+            SRUS = new string[] { "А", "Б", "В", "Г", "Д", "З", "И", "Й", "К", "Л", "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Ц", "Ы", "Э" };
+            sRuj = new string[] { "е", "ё", "ж", "х", "ч", "ш", "щ", "ю", "я" };
+            SRUJ = new string[] { "Е", "Ё", "Ж", "Х", "Ч", "Ш", "Щ", "Ю", "Я" };
+            lRus = new string[] {"ё", "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х", "ъ", "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э", "я", "ч", "с", "м", "и", "т", "ь", "б", "ю"};
+            LRUS = new string[] {"Ё", "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ", "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э", "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю" };
+            lEng = new string[] {"`", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "z", "x", "c", "v", "b", "n", "m", ",", "." };
+            LENG = new string[] {"~", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "{", "}", "A", "S", "D", "F", "G", "H", "J", "K", "L", ":", ":", "Z", "X", "C", "V", "B", "N", "M", "<", ">" };
+            string text = Console.ReadLine();
+            Console.WriteLine("Нажмите Alt + любую кнопку для транслитерации текста(С английского на русский)\n" +
+                              "Нажмите Shift + любую кнопку для транслитерации текста(С русского на английский)\n" +
+                              "Нажмите Control + любую кпонпу для перевода английский букв в русские (Если забыли сменить раскладку) ");
+            char[] input_text = text.ToCharArray();
+            string output_text = text;
+            Translate = Console.ReadKey();
+            if (Translate.Modifiers == ConsoleModifiers.Alt)
+            {
+                for (int iJ = 0; iJ < text.Length - 3; iJ++) // Поиск и замена shch/Shch на щ/Щ
+                {
+                    if (Char.ToString(input_text[iJ]) + Char.ToString(input_text[iJ + 1]) + Char.ToString(input_text[iJ + 2]) + Char.ToString(input_text[iJ + 3]) == "shch")
+                    {
+                        output_text = output_text.Replace(sEnj[6], sRuj[6]);
+                    }
+                    if (Char.ToString(input_text[iJ]) + Char.ToString(input_text[iJ + 1]) + Char.ToString(input_text[iJ + 2]) + Char.ToString(input_text[iJ + 3]) == "Shch")
+                    {
+                        output_text = output_text.Replace(SENJ[6], SRUJ[6]);
+                    }
+                }
+                for (int i = 0; i < text.Length - 1; i++) // Поиск и замена йотированных гласных ( некоторых согласных )
+                {
+                    for (int b = 0; b < sEnj.Length; b++)
+                    {
+                        if ((char.ToString(input_text[i]) + char.ToString(input_text[i + 1]) == sEnj[b]))
+                        {
+                            output_text = output_text.Replace(sEnj[b], sRuj[b]);
+                            b++;
+                        }
+                    }
+                    for (int bb = 0; bb < SENJ.Length; bb++)
+                    {
+                        if ((char.ToString(input_text[i]) + char.ToString(input_text[i + 1]) == SENJ[bb]))
+                        {
+                            output_text = output_text.Replace(SENJ[bb], SRUJ[bb]);
+                            bb++;
+                        }
+                    }
+                }
+                for (int II = 0; II < text.Length; II++) // Поиск и замена оставшегося текста
+                {
+                    for (int III = 0; III < sEng.Length; III++)
+                    {
+                        if (Char.ToString(input_text[II]) == sEng[III])
+                        {
+                            output_text = output_text.Replace(sEng[III], sRus[III]);
+                        }
+                        if (char.ToString(input_text[II]) == SENG[III])
+                        {
+                            output_text = output_text.Replace(SENG[III], SRUS[III]);
+                        }
+                    }
+                }
+                Console.WriteLine("");
+                Console.WriteLine(output_text);
+            }
+            if (Translate.Modifiers == ConsoleModifiers.Shift)
+            {
+                for (int iJ = 0; iJ < text.Length - 3; iJ++) // Поиск и замена shch/Shch на щ/Щ
+                {
+                    if (Char.ToString(input_text[iJ]) == "щ")
+                    {
+                        output_text = output_text.Replace(sRuj[6], sEnj[6]);
+                    }
+                    if (Char.ToString(input_text[iJ]) == "Щ")
+                    {
+                        output_text = output_text.Replace(SRUJ[6], SENG[6]);
+                    }
+                }
+                for (int i = 0; i < text.Length - 1; i++) // Поиск и замена йотированных гласных ( некоторых согласных )
+                {
+                    for (int b = 0; b < sEnj.Length; b++)
+                    {
+                        if ((Char.ToString(input_text[i]) == sRuj[b]))
+                        {
+                            output_text = output_text.Replace(sRuj[b], sEnj[b]);
+                            b++;
+                        }
+                    }
+                    for (int bb = 0; bb < SENJ.Length; bb++)
+                    {
+                        if ((Char.ToString(input_text[i]) == SRUJ[bb]))
+                        {
+                            output_text = output_text.Replace(SRUJ[bb], SENJ[bb]);
+                            bb++;
+                        }
+                    }
+                }
+                for (int II = 0; II < text.Length; II++) // Поиск и замена оставшегося текста
+                {
+                    for (int III = 0; III < sEng.Length; III++)
+                    {
+                        if (Char.ToString(input_text[II]) == sRus[III])
+                        {
+                            output_text = output_text.Replace(sRus[III], sEng[III]);
+                        }
+                        if (Char.ToString(input_text[II]) == SRUS[III])
+                        {
+                            output_text = output_text.Replace(SRUS[III], SENG[III]);
+                        }
+                    }
+                }
+                Console.WriteLine("");
+                Console.WriteLine(output_text);
+            }
+            if (Translate.Modifiers == ConsoleModifiers.Control)
+            {
+                for (int i = 0; i < text.Length; i++)
+                {
+                    for (int I = 0; I < LRUS.Length; I++)
+                    {
+                        if (Char.ToString(input_text[i]) == LENG[I])
+                        {
+                            output_text = output_text.Replace(LENG[I], LRUS[I]);
+                        }
+                        if (Char.ToString(input_text[i]) == lEng[I])
+                        {
+                            output_text = output_text.Replace(lEng[I], lRus[I]);
+                        }
+                    }
+                }
+                Console.WriteLine("");
+                Console.WriteLine(output_text);
+            }
+        }
+    }
+}
