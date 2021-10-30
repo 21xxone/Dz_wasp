@@ -1,0 +1,185 @@
+using System;
+
+namespace ConsoleApp10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите длину одномерного массива");
+            int a = Int32.Parse(Console.ReadLine());
+            foreach (int i in Task_1(a))
+                Console.Write(i + " ");
+            Console.WriteLine("\n\nВывод двумерного массива");
+            int[,] b = new int[,] { { 1, 2, 3 }, { 5, 6, 2 } };
+            Task_12(b);
+            Console.WriteLine("\nВывод трехмерного массива");
+            int[,,] c = new int[1, 2, 4];
+            Task_13(c);
+            Console.WriteLine($"\nМинимум одномерного массива : {min_mass(Task_1(a))}\n" +
+                $"Максимум одномерного массива : {max_mass(Task_1(a))}");
+            Console.WriteLine($"\nМинимум двухмерного массива : {min_mass_2(b)}\n" +
+                $"Максимум двухмерного массива : {max_mass_2(b)}");
+            int[] am = new int[5];
+            int[] bm = new int[7];
+            Console.WriteLine("\nСумма двух случайно заполненных массивов");
+            sum_mass(am, bm);
+            Console.WriteLine("\n\nРазность двух случайно заполненных массивов");
+            raz_mass(am, bm);
+            Console.WriteLine("\n");
+            Task_6(am, bm);
+            Task_7(am, bm);
+
+        }
+        public static int[] Task_1(int a)
+        {
+            int[] mas = new int[a];
+            for (int i = 0; i < a; i++)
+                mas[i] = i;
+            return mas;
+        }
+        public static void Task_12(int[,] b)
+        {
+            int index_1 = b.GetLength(0);
+            int index_2 = b.GetLength(1);
+            for (int i = 0; i < index_1; i++)
+            {
+                for (int k = 0; k < index_2; k++)
+                {
+                    Console.Write(b[i, k] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        public static void Task_13(int[,,] c)
+        {
+            Random c_r = new Random();
+            int a_c = c.GetLength(0);
+            int b_c = c.GetLength(1);
+            int c_c = c.GetLength(2);
+            for (int i = 0; i < a_c; i++)
+            {
+                for (int j = 0; j < b_c; j++)
+                {
+                    for (int k = 0; k < c_c; k++)
+                    {
+                        c[i, j, k] = c_r.Next(1, 20);
+                        Console.Write(c[i, j, k] + " ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+        public static int max_mass(int[] a)
+        {
+            int max = -1;
+            for (int i = 0; i < a.Length; i++)
+                if (a[i] > max)
+                    max = a[i];
+            return max;
+        }
+        public static int min_mass(int[] a)
+        {
+            int min = 66666666;
+            for (int i = 0; i < a.Length; i++)
+                if (a[i] < min)
+                    min = a[i];
+            return min;
+        }
+        public static int max_mass_2(int[,] b)
+        {
+            int max = -1;
+            foreach (int i in b)
+                if (max < i)
+                    max = i;
+            return max;
+        }
+        public static int min_mass_2(int[,] b)
+        {
+            int min = 66666666;
+            foreach (int i in b)
+                if (min > i)
+                    min = i;
+            return min;
+        }
+        static void sum_mass(int[] a_m, int[] b_m)
+        {
+            Random ab_m = new Random();
+            for (int n = 0; n < Math.Min(a_m.Length, b_m.Length); n++)
+            {
+                a_m[n] = ab_m.Next(1, 20);
+                b_m[n] = ab_m.Next(1, 10);
+                Console.Write($"{a_m[n]}+{b_m[n]} ");
+            }
+            Console.WriteLine();
+            int[] Length_ab = new int[Math.Min(a_m.Length, b_m.Length)];
+            for (int i = 0; i < Math.Min(a_m.Length, b_m.Length); i++)
+                Length_ab[i] = a_m[i] + b_m[i];
+            for (int k = 0; k < Length_ab.Length; k++)
+                Console.Write(Length_ab[k] + " ");
+        }
+        static void raz_mass(int[] a_m, int[] b_m)
+        {
+            Random ab_m = new Random();
+            for (int n = 0; n < Math.Min(a_m.Length,b_m.Length); n++)
+            {
+                a_m[n] = ab_m.Next(1, 20);
+                b_m[n] = ab_m.Next(1, 10);
+                Console.Write($"{a_m[n]}-{b_m[n]} ");
+            }
+            Console.WriteLine();
+            int[] Length_ab = new int[Math.Min(a_m.Length, b_m.Length)];
+            for (int i = 0; i < Math.Min(a_m.Length, b_m.Length); i++)
+                Length_ab[i] = a_m[i] - b_m[i];
+            for (int k = 0; k < Length_ab.Length; k++)
+                Console.Write(Length_ab[k] + " ");
+        }
+        static void Task_6(int [] a_m, int [] b_m)
+        {
+            Random ab_m = new Random();
+            for (int n = 0; n < Math.Min(a_m.Length, b_m.Length); n++)
+            {
+                a_m[n] = ab_m.Next(1, 10);
+                b_m[n] = ab_m.Next(1, 10);
+            }
+            int s = 0;
+            for (int i = 0; i < Math.Min(a_m.Length, b_m.Length); i++)
+            {
+                if (a_m[i] == b_m[i])
+                    s++;
+            }
+            for (int k = 0; k < Math.Min(a_m.Length, b_m.Length); k++)
+            {
+                Console.Write(a_m[k] + " ");
+            }
+            Console.WriteLine();
+            for (int k = 0; k < Math.Min(a_m.Length, b_m.Length); k++)
+            {
+                Console.Write(b_m[k]+ " ");
+            }
+            Console.WriteLine($"\nПроцент совпадения массивов - {s * 100 / Math.Min(a_m.Length, b_m.Length)}%\n");
+        }
+        static void Task_7(int [] a_m, int[] b_m)
+        {
+            Random ab_m = new Random();
+            for (int n = 0; n < Math.Min(a_m.Length, b_m.Length); n++)
+            {
+                a_m[n] = ab_m.Next(1, 10);
+                b_m[n] = ab_m.Next(1, 10);
+            }
+            for (int k = 0; k < Math.Min(a_m.Length, b_m.Length); k++)
+            {
+                Console.Write(a_m[k] + " ");
+            }
+            Console.WriteLine();
+            for (int k = 0; k < Math.Min(a_m.Length, b_m.Length); k++)
+            {
+                Console.Write(b_m[k] + " ");
+            }
+            int s = 0;
+            for (int i = 0; i < Math.Min(a_m.Length, b_m.Length); i++)
+                s = s + a_m[i] + b_m[i];
+            Console.WriteLine($"\nСреднее значение массивов - {s / (Math.Min(a_m.Length, b_m.Length) * 2)}.{s % (Math.Min(a_m.Length, b_m.Length) * 2)}(Округлено до десятых)");
+        }
+    }
+}
