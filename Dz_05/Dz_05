@@ -1,0 +1,122 @@
+using System;
+
+namespace ConsoleApp11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите длину массива для первой задачи");
+            int lenght_mass_input = Int32.Parse(Console.ReadLine());
+            Task_1(lenght_mass_input);
+            Console.WriteLine("\nВведите длину массива для второй задачи");
+            int lenght_mass_input2 = Int32.Parse(Console.ReadLine());
+            Task_2(lenght_mass_input2);
+            Console.WriteLine("\nВведите два числа(каждое число с новой строки) для третьей задачи");
+            int M = Int32.Parse(Console.ReadLine());
+            int N = Int32.Parse(Console.ReadLine());
+            Task_3(M, N);
+            Console.WriteLine("Введите количество кеглей и бросков (через пробел)");
+            string NK = Console.ReadLine();
+            int N5 = Convert.ToInt32(NK.Split()[0]);
+            int K5 = Convert.ToInt32(NK.Split()[1]);
+            string[] k = Task_5_1(N5, K5);
+            while(K5> 0)
+            {
+                Console.WriteLine("Введите от какой кегли до какой шар их сбил (через пробел)");
+                string liri = Console.ReadLine();
+                int li = Convert.ToInt32(liri.Split()[0]);
+                int ri = Convert.ToInt32(liri.Split()[1]);
+                for (int n = li; n <= ri; n++)
+                {
+                    k[n - 1] = ".";
+                }
+                K5--;
+            }
+            for(int i = 0; i < k.Length; i++)
+            {
+                Console.Write(k[i]);
+            }
+        }
+        static void Task_1(int lenght)
+        {
+            int[] mass = new int[lenght];
+            Random numbers = new Random();
+            for (int i = 0; i < mass.Length; i++)
+            {
+                mass[i] = numbers.Next(1, 10);
+                Console.Write(mass[i] + " ");
+            }
+            Console.WriteLine();
+            foreach (int a in mass)
+            {
+                int m = 0;
+                foreach (int b in mass)
+                {
+                    if (a == b)
+                    {
+                        m++;
+                    }
+                }
+                if (m == 1)
+                {
+                    Console.Write(a + " ");
+                }
+            }
+        }
+        static void Task_2(int lenght)
+        {
+            int[] mass = new int[lenght];
+            Random numbers = new Random();
+            int m, k;
+            for (int i = 0; i < mass.Length; i++)
+            {
+                mass[i] = numbers.Next(1, 15);
+                Console.Write(mass[i] + " ");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < mass.Length; i++)
+            {
+                for (int n = 0; n < mass.Length - 1; n++)
+                {
+                    if (mass[n] >= mass[n + 1])
+                    {
+                        m = mass[n];
+                        k = mass[n + 1];
+                        mass[n + 1] = m;
+                        mass[n] = k;
+                    }
+                }
+            }
+            for (int i = 0; i < mass.Length; i++)
+                Console.Write(mass[i] + " ");
+        }
+        static void Task_3(int M, int N)
+        {
+            int i = 0;
+            do
+            {
+                i = N % M;
+                if (i > 0)
+                {
+                    Console.WriteLine("NO");
+                    return;
+                }
+                N = N / M;
+            } while (N != M);
+            if (N == M && i == 0)
+            {
+                Console.WriteLine("YES");
+            }
+        }
+        static string[] Task_5_1(int N, int K)
+        {
+            string[] k = new string[N];
+            for (int i = 0; i < N; i++)
+            {
+                k[i] = "|";
+            }
+            return k;
+        }
+    }
+}
