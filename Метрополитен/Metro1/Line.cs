@@ -19,31 +19,31 @@ namespace Метрополитен
         }
         public Station GetStation(string name)
         {
-        
+            
         }
         public string GetName()
         {
-            return "";
+            return name;
         }
         public void SetName(string name)
         {
-
+            this.name = name;
         }
         public string GetColor()
         {
-            return "";
+            return color;
         }
         public void SetColor(string color)
         {
-
+            this.color = color;
         }
         public void AddStation(string name, string color)
         {
-
+            stations.Add(new Station(name, color));
         }
         public void AddStation(string name, string color, List<Station> transfers)
         {
-
+            stations.Add(new Station(name, color, transfers));
         }
         public void RemoveStation(string name)
         {

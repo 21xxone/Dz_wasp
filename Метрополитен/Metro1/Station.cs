@@ -8,9 +8,9 @@ namespace Метрополитен
 {
     class Station
     {
-        string name;
-        string color;
-        Line line;
+        public string name;
+        public string color;
+        public Line line;
         bool isWheelchairAccessible;
         bool hasParkAndRide;
         bool hasNearbyCableCar;
@@ -18,31 +18,34 @@ namespace Метрополитен
 
         public Station(string name, string color)
         {
-
+            this.name = name;
+            this.color = color;
         }
         public Station(string name, string color, List<Station> transfers)
         {
-
+            this.name = name;
+            this.color = color;
+            this.transfers = transfers;
         }
         public string GetName()
         {
-            return "";
+            return name;
         }
         public void SetName(string name)
         {
-
+            this.name = name;
         }
         public bool IsWheelchairAccessible()
         {
-            return true;
+            return isWheelchairAccessible;
         }
         public bool HasParkAndRide()
         {
-            return true;
+            return hasParkAndRide;
         }
         public bool HasNearbyCableCar()
         {
-            return true;
+            return hasNearbyCableCar;
         }
         public string GetLineName()
         {
@@ -50,7 +53,7 @@ namespace Метрополитен
         }
         public List<Station> GetTransferList()
         {
-            
+            return transfers;
         }
     }
 }

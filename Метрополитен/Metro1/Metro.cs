@@ -22,15 +22,16 @@ namespace Метрополитен
         }
         public void AddLine (string name, string color)
         {
-
+            Line line = new Line(name, color);
+            lines.Add(line);
         }
-        public void RemoveLine (string name)
+        public void RemoveLine(string name)
         {
 
         }
         public List<Station> FindStation(string name, string lineName)
         {
-        
+            
         } 
         public Station FindStation(string name, string lineName)
         {

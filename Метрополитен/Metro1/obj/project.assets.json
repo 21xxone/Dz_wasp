@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timza\\source\\repos\\Метрополитен\\Metro1\\Metro1.csproj",
+      "projectUniqueName": "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Метрополитен\\Metro1\\Metro1.csproj",
       "projectName": "Метрополитен",
-      "projectPath": "C:\\Users\\timza\\source\\repos\\Метрополитен\\Metro1\\Metro1.csproj",
+      "projectPath": "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Метрополитен\\Metro1\\Metro1.csproj",
       "packagesPath": "C:\\Users\\timza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timza\\source\\repos\\Метрополитен\\Metro1\\obj\\",
+      "outputPath": "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Метрополитен\\Metro1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timza\\AppData\\Roaming\\NuGet\\NuGet.Config",
