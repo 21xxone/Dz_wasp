@@ -27,7 +27,13 @@ namespace Метрополитен
         }
         public void RemoveLine(string name)
         {
-
+            for(int i = 0; i < lines.Count(); i++)
+            {
+                if(lines[i].GetName() == name)
+                {
+                    lines.Remove(lines[i]);
+                }
+            }
         }
         public List<Station> FindStation(string name, string lineName)
         {

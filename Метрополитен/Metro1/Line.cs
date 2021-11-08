@@ -51,11 +51,11 @@ namespace Метрополитен
         }
         public Station FindStationByName(string name)
         {
-
+            
         }
         public List<Station> GetStationList (string name)
         {
-
+            return stations;
         }
     }
 }

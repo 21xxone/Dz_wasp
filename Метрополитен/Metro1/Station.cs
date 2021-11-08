@@ -49,7 +49,7 @@ namespace Метрополитен
         }
         public string GetLineName()
         {
-            return "";
+            return line.GetName();
         }
         public List<Station> GetTransferList()
         {
