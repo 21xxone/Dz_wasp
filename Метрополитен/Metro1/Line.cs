@@ -53,7 +53,7 @@ namespace Метрополитен
         {
             
         }
-        public List<Station> GetStationList (string name)
+        public List<Station> GetStationList ()
         {
             return stations;
         }
