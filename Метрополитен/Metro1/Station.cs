@@ -25,7 +25,7 @@ namespace Метрополитен
         {
             this.name = name;
             this.color = color;
-            this.transfers = transfers;
+
         }
         public string GetName()
         {

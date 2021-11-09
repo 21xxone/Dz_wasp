@@ -1,0 +1,5 @@
+C:\Users\timza\OneDrive\Документы\GitHub\DZ_02\Dz_wasp\Метрополитен\Metro1\obj\Debug\net5.0\Metro1.csproj.AssemblyReference.cache
+C:\Users\timza\OneDrive\Документы\GitHub\DZ_02\Dz_wasp\Метрополитен\Metro1\obj\Debug\net5.0\Metro1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\timza\OneDrive\Документы\GitHub\DZ_02\Dz_wasp\Метрополитен\Metro1\obj\Debug\net5.0\Metro1.AssemblyInfoInputs.cache
+C:\Users\timza\OneDrive\Документы\GitHub\DZ_02\Dz_wasp\Метрополитен\Metro1\obj\Debug\net5.0\Metro1.AssemblyInfo.cs
+C:\Users\timza\OneDrive\Документы\GitHub\DZ_02\Dz_wasp\Метрополитен\Metro1\obj\Debug\net5.0\Metro1.csproj.CoreCompileInputs.cache

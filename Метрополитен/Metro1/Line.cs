@@ -19,7 +19,7 @@ namespace Метрополитен
         }
         public Station GetStation(string name)
         {
-            
+            return null;
         }
         public string GetName()
         {
@@ -51,9 +51,9 @@ namespace Метрополитен
         }
         public Station FindStationByName(string name)
         {
-            
+            return null;
         }
-        public List<Station> GetStationList ()
+        public List<Station> GetStationList()
         {
             return stations;
         }

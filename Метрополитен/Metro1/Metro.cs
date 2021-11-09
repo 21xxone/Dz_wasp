@@ -37,15 +37,15 @@ namespace Метрополитен
         }
         public List<Station> FindStation(string name, string lineName)
         {
-            
+            return null;
         } 
         public Station FindStation(string name, string lineName)
         {
-
+            return null;
         }
         public List<Station> GetStationList(string name)
         {
-
+            return null;
         }
         public void LoadStationsFromFile(string filename)
         {
