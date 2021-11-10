@@ -16,7 +16,7 @@ namespace ConsoleApp14
         public class PassengerCar : Car
         {
             protected int number_of_passengers;
-            protected Dictionary<string, int> repair_book = new Dictionary<string, int>();
+            protected Dictionary<string, int> repair_book;
             public PassengerCar(string label, int power, int year, int number_of_passengers, Dictionary<string,int> repair_book) : base(label, power, year)
             {
                 this.number_of_passengers = number_of_passengers;
@@ -47,7 +47,7 @@ namespace ConsoleApp14
         {
             protected int maximum_capacity;
             protected string SN_driver;
-            protected Dictionary<string, int> cargo = new Dictionary<string, int>();
+            protected Dictionary<string, int> cargo;
 
             public Truck(string label, int power, int year, int maximum_capacity, string SN_driver, Dictionary<string, int> cargo) : base(label, power, year)
             {
@@ -82,13 +82,19 @@ namespace ConsoleApp14
         public class AutoPark
         {
             protected string name;
-            protected List<PassengerCar> PassengerCars = new List<PassengerCar>();
-            protected List<Truck> trucks = new List<Truck>();
+            protected List<PassengerCar> PassengerCars;
+            protected List<Truck> trucks;
             public AutoPark(string name, List<PassengerCar> PassengerCars,List<Truck> trucks)
             {
                 this.name = name;
-                this.PassengerCars = PassengerCars;
-                this.trucks = trucks;
+                foreach(PassengerCar c in PassengerCars)
+                {
+                    this.PassengerCars.Add(c);
+                }
+                foreach(Truck c in trucks)
+                {
+                    this.trucks.Add(c);
+                }
             }
             public override string ToString()
             {

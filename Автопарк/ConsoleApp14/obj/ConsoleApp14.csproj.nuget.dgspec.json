@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\timza\\source\\repos\\ConsoleApp14\\ConsoleApp14\\ConsoleApp14.csproj": {}
+    "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Автопарк\\ConsoleApp14\\ConsoleApp14.csproj": {}
   },
   "projects": {
-    "C:\\Users\\timza\\source\\repos\\ConsoleApp14\\ConsoleApp14\\ConsoleApp14.csproj": {
+    "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Автопарк\\ConsoleApp14\\ConsoleApp14.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\timza\\source\\repos\\ConsoleApp14\\ConsoleApp14\\ConsoleApp14.csproj",
+        "projectUniqueName": "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Автопарк\\ConsoleApp14\\ConsoleApp14.csproj",
         "projectName": "ConsoleApp14",
-        "projectPath": "C:\\Users\\timza\\source\\repos\\ConsoleApp14\\ConsoleApp14\\ConsoleApp14.csproj",
+        "projectPath": "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Автопарк\\ConsoleApp14\\ConsoleApp14.csproj",
         "packagesPath": "C:\\Users\\timza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\timza\\source\\repos\\ConsoleApp14\\ConsoleApp14\\obj\\",
+        "outputPath": "C:\\Users\\timza\\OneDrive\\Документы\\GitHub\\DZ_02\\Dz_wasp\\Автопарк\\ConsoleApp14\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\timza\\AppData\\Roaming\\NuGet\\NuGet.Config",
