@@ -20,6 +20,10 @@ namespace Метрополитен
         {
             this.name = name;
             this.color = color;
+            foreach(Station c in transfers)
+            {
+                this.transfers.Add(c);
+            }
         }
         public Station(string name, string color, List<Station> transfers)
         {
