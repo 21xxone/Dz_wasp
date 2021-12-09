@@ -8,8 +8,8 @@ namespace Метрополитен
 {
     class Metro
     {
-        List<Line> lines;
-        string city;
+        private List<Line> lines;
+        private string city;
 
         public Metro (string city)
         {
@@ -39,7 +39,7 @@ namespace Метрополитен
         {
             return null;
         } 
-        public Station FindStation(string name, string lineName)
+        public Station FindStation()
         {
             return null;
         }
@@ -50,6 +50,10 @@ namespace Метрополитен
         public void LoadStationsFromFile(string filename)
         {
 
+        }
+        public override string ToString()
+        {
+            return null;
         }
     }
 }

@@ -6,50 +6,72 @@ using System.Threading.Tasks;
 
 namespace Метрополитен
 {
-    class Station
+    public class Station
     {
-        public string name;
-        public string color;
-        public Line line;
-        bool isWheelchairAccessible;
-        bool hasParkAndRide;
-        bool hasNearbyCableCar;
-        List<Station> transfers;
-
-        public Station(string name, string color)
+        protected string name;
+        protected ConsoleColor color;
+        protected Line line;
+        protected bool isWheelchairAccessible;
+        protected bool hasParkAndRide;
+        protected bool hasNearbyCableCar;
+        protected List<Station> transfers;
+        public Station(string name, ConsoleColor color, params[] string info)
         {
             this.name = name;
             this.color = color;
-            foreach(Station c in transfers)
+            foreach (Station c in transfers)
             {
                 this.transfers.Add(c);
             }
         }
-        public Station(string name, string color, List<Station> transfers)
+        public Station(string name, ConsoleColor color, List<Station> transfers, params[] string info)
         {
             this.name = name;
             this.color = color;
-
         }
-        public string GetName()
+        public string Name
         {
-            return name;
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
         }
-        public void SetName(string name)
+        public bool IsWheelchairAccessible
         {
-            this.name = name;
+            get
+            {
+                return isWheelchairAccessible;
+            }
+            set
+            {
+                isWheelchairAccessible = value;
+            }
         }
-        public bool IsWheelchairAccessible()
+        public bool HasParkAndRide
         {
-            return isWheelchairAccessible;
+            get
+            {
+                return HasParkAndRide;
+            }
+            set
+            {
+                HasParkAndRide = value;
+            }
         }
-        public bool HasParkAndRide()
+        public bool HasNearbyCableCar
         {
-            return hasParkAndRide;
-        }
-        public bool HasNearbyCableCar()
-        {
-            return hasNearbyCableCar;
+            get
+            {
+                return hasNearbyCableCar;
+            }
+            set
+            {
+                hasNearbyCableCar = value;
+            }
         }
         public string GetLineName()
         {
@@ -59,5 +81,10 @@ namespace Метрополитен
         {
             return transfers;
         }
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }
+

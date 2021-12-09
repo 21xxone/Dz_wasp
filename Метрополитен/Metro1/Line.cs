@@ -58,4 +58,11 @@ namespace Метрополитен
             return stations;
         }
     }
+    public class UndergroundLine : Line
+    {
+        public UndergroundLine(string name, string color) : base(string name, ConsoleColor color)
+        {
+
+        }
+    }
 }
