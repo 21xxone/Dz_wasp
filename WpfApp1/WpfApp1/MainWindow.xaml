@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="560.397" Width="456.71" MinWidth="456.71" MinHeight="560.397" MaxHeight="560.397" MaxWidth="456.71">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="465.802,0.216,-7.543,4.753">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="401*"/>
+            <RowDefinition Height="104*"/>
+        </Grid.RowDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.324"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TextBox x:Name="text_box" HorizontalAlignment="Left" Height="61.856" Margin="-341.02,98.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222.706" Background="#FF2ED3B5" FontSize="22" MinWidth="222" MinHeight="58" UseLayoutRounding="False" MaxWidth="300" MaxHeight="70"/>
+
+        <Button x:Name="bt_nine" Content="9" Height="66.053" Margin="-341.02,160.056,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_nine_Click"/>
+        <Button x:Name="bt_eight" Content="8" Height="66.053" Margin="-266.785,160.056,0,0" Width="74.236" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_eight_Click"/>
+        <Button x:Name="bt_seven" Content="7" Height="66.053" Margin="-192.549,160.056,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_seven_Click"/>
+        <Button x:Name="bt_six" Content="6" Height="66.054" Margin="-192.549,226.109,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_six_Click"/>
+        <Button x:Name="button_five" Content="5" Height="66.054" Margin="-266.785,226.109,0,0" Width="74.236" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="button_five_Click"/>
+        <Button x:Name="bt_four" Content="4" Height="66.054" Margin="-341.02,226.109,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_four_Click"/>
+        <Button x:Name="bt_three" Content="3" Height="66.054" Margin="-341.02,292.163,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_three_Click"/>
+        <Button x:Name="bt_two" Content="2" Height="66.054" Margin="-266.785,292.163,0,0" Width="74.236" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="bt_two_Click"/>
+        <Button x:Name="Bt_one" Content="1" Height="66.054" Margin="-192.549,292.163,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="Bt_one_Click"/>
+        <Button x:Name="Bt_check" Content="✓" Height="66.054" Margin="-192.549,358.217,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="Bt_check_Click" Grid.RowSpan="2"/>
+        <Button x:Name="Bt_zero" Content="0" Height="66.054" Margin="-266.785,358.217,0,0" Width="74.236" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="Bt_zero_Click" Grid.RowSpan="2"/>
+        <Button x:Name="Bt_delete" Content="⛌" Height="66.054" Margin="-341.02,358.217,0,0" Width="74.235" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="Bt_delete_Click" Grid.RowSpan="2"/>
+        <TextBlock x:Name="Text_box_nope" HorizontalAlignment="Left" Height="61.856" Margin="-465.865,98.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124.845" FontSize="30"/>
+
+    </Grid>
+</Window>
