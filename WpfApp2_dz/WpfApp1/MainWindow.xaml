@@ -130,7 +130,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn0" Content="0" Height="77.307" Margin="-284.263,399.279,0,0" Width="74.188" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Grid.RowSpan="2" Click="btn_Click">
+        <Button x:Name="btn0" Content="0" Height="77.307" Margin="-284.263,399.279,0,0" Width="74.188" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Grid.RowSpan="2" Click="btn_Click" MouseDown="RandomButtons">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
