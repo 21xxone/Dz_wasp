@@ -90,7 +90,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn3" Content="3" Height="77.308" Margin="-358.451,321.843,0,0" Width="74.187" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="btn_Click">
+        <Button x:Name="btn3" Content="3" Height="77.308" Margin="-358.451,321.843,0,0" Width="74.187" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="btn_Click" MouseDown="RandomButtons">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -100,7 +100,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btn2" Content="2" Height="77.308" Margin="-284.263,321.971,0,0" Width="74.188" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="btn_Click">
+        <Button x:Name="btn2" Content="2" Height="77.308" Margin="-284.263,321.971,0,0" Width="74.188" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Click="btn_Click" MouseDown="RandomButtons">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -120,7 +120,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="btnaccept" Content="✓" Height="77.307" Margin="-210.074,399.408,0,0" Width="74.187" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Grid.RowSpan="2">
+        <Button x:Name="btnaccept" Content="✓" Height="77.307" Margin="-210.074,399.408,0,0" Width="74.187" RenderTransformOrigin="1.344,0.719" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Grid.RowSpan="2" Click="btnaccept_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
